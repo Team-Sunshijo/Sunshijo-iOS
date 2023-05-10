@@ -8,8 +8,8 @@ let depencies = Dependencies(
             requirement: .upToNextMajor(from: "15.0.0")
         ),
         // RxSwift
-//        .remote(url: "https://github.com/ReactiveX/RxSwift",
-//                requirement: .upToNextMajor(from: "6.5.0")),
+        .remote(url: "https://github.com/ReactiveX/RxSwift",
+                requirement: .upToNextMajor(from: "6.5.0")),
         // SnapKit
         .remote(
             url: "https://github.com/SnapKit/SnapKit.git",

@@ -1,10 +1,12 @@
 import ProjectDescription
 
 let workspace = Workspace(
-    name: "Sunshijo_iOS",
+    name: "Sunshijo_Workspace",
     projects: [
-        "iOS",
-        "PackageLibrary",
-        "Service"
-    ]
+        "Application",
+        "Modules/**",
+        "Services/**"
+    ],
+    fileHeaderTemplate: nil,
+    additionalFiles: []
 )

@@ -1,3 +1,3 @@
 import Foundation
 
-let sunshijoOrganizationName: String = "com.kodomo"
+public let sunshijoOrganizationName: String = "com.kodomo"
