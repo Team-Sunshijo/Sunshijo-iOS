@@ -3,7 +3,6 @@ import Moya
 
 enum AuthAPI: TargetType {
     case signin(request: SigninRequest)
-//    case signup(request: SignupRequest)
     case refreshToken(refreshToken: String)
 }
 
@@ -19,8 +18,6 @@ extension AuthAPI {
             return "/teachers/auth"
         case .refreshToken:
             return "/teachers/token"
-//        case .signup:
-//            return "/teachers/register"
         }
     }
 
@@ -35,8 +32,6 @@ extension AuthAPI {
         switch self {
         case .signin(let request):
             return .requestJSONEncodable(request)
-//        case .signup(let request):
-//            return .requestJSONEncodable(request)
         default:
             return .requestPlain
         }
