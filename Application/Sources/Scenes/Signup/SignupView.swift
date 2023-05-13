@@ -10,10 +10,8 @@ import SwiftUI
 
 struct SignupView: View {
     var body: some View {
-        SunshijoAsset.main
         Image("Sunshijo")
             .padding(.vertical, 98)
         Spacer()
-        
     }
 }
