@@ -2,7 +2,7 @@ import ProjectDescription
 
 extension TargetDependency {
     public struct Service {
-        public static let TestService = service(name: "TestService")
+        public static let AuthService = service(name: "AuthService")
     }
     
     private static func service(name: String) -> TargetDependency {
