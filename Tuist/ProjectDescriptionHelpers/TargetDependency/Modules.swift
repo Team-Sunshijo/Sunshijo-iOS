@@ -3,7 +3,7 @@ import ProjectDescription
 extension TargetDependency {
     
     public struct Module {
-        public static let TestModule = module(name: "TestModule")
+        public static let KeychainModule = module(name: "KeychainModule")
     }
     private static func module(name: String) -> TargetDependency {
         return TargetDependency.project(

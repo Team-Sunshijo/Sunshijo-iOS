@@ -2,9 +2,10 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.framework(
-    name: "TestModule",
+    name: "KeychainModule",
     platform: .iOS,
     dependencies: [
-        .SPM.RxSwift
+        .SPM.RxSwift,
+        .SPM.KeychainSwift
     ]
 )

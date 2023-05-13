@@ -10,7 +10,7 @@ let project = Project(
             name: "Sunshijo-iOS",
             platform: .iOS,
             product: .app,
-            bundleId: "$(APP_BUNDLE_ID)",
+            bundleId: "com.KODOMO",
             deploymentTarget: .iOS(
                 targetVersion: "15.0",
                 devices: .iphone
@@ -20,8 +20,8 @@ let project = Project(
             resources: ["Resources/**"],
             scripts: [.swiftLintScript],
             dependencies: [
-                .Module.TestModule,
-                .Service.AuthService
-            ]),
+                .Module.KeychainModule,
+                .Service.TestService
+            ])
     ]
 )
