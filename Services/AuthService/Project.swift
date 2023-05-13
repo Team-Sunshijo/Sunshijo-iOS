@@ -2,8 +2,10 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.framework(
-    name: "TestService",
+    name: "AuthService",
     platform: .iOS,
     dependencies: [
-        .SPM.RxSwift
+        .SPM.RxSwift,
+        .SPM.Moya,
+        .SPM.RxMoya
     ])
