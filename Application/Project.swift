@@ -20,7 +20,7 @@ let project = Project(
             resources: ["Resources/**"],
             scripts: [.swiftLintScript],
             dependencies: [
-                .Module.TestModule,
+                .Module.KeychainModule,
                 .Service.TestService
             ]),
     ]
