@@ -21,6 +21,7 @@ let project = Project(
             scripts: [.swiftLintScript],
             dependencies: [
                 .Module.KeychainModule,
+                .Module.SDateUtil,
                 .Service.TestService
             ])
     ]
