@@ -21,7 +21,8 @@ let project = Project(
             scripts: [.swiftLintScript],
             dependencies: [
                 .Module.KeychainModule,
-                .Service.AuthService
+                .Service.AuthService,
+                .Module.SDateUtil
             ])
     ]
 )
