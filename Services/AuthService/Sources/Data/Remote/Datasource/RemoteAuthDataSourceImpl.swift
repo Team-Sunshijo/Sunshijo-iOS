@@ -10,6 +10,10 @@ class RemoteAuthDataSourceImpl: RemoteAuthDataSource {
     func signin(request: SigninRequest) -> Single<SigninAndRefreshTokenResponse> {
         self.provider.rx.request(.signin(request: request))
             .map(SigninAndRefreshTokenResponse.self)
+            .do(onError: {
+                print("error")
+                print($0)
+            })
     }
     func signup(request: SignupRequest) -> RxSwift.Completable {
         self.provider.rx.request(.signup(request: request))

@@ -3,13 +3,17 @@ import SwiftUI
 struct AuthButton: View {
     var buttonTitle: String
     var action: () -> ()
-    public init(buttonTitle: String, action: @escaping () -> Void) {
+    public init(
+        buttonTitle: String,
+        action: @escaping () -> Void
+    ) {
         self.buttonTitle = buttonTitle
         self.action = action
     }
     var body: some View {
         VStack {
-            Button(buttonTitle) {
+            Button(action: action) {
+                Text(buttonTitle)
             }
             .frame(height: 40)
             .padding([.leading, .trailing], 70)

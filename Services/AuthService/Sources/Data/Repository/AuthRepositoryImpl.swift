@@ -34,7 +34,8 @@ class AuthRepositoryImpl: AuthRepository {
             })
             .catch { [weak self] error in
                 let moyaError = error as? MoyaError
-                guard moyaError?.response?.statusCode != nil else { return .error(AuthServiceError.internalServerError) }
+                guard moyaError?.response?.statusCode != nil else {
+                    return .error(AuthServiceError.internalServerError) }
                 guard let errorCode = self?.errorToStatusCode(error) else { return .error(error) }
                 switch errorCode {
                 case 409: return .error(AuthServiceError.conflict)
