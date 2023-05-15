@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 // swiftlint:disable large_tuple
-public struct XNavigationAndTabView: View {
+public struct SNavigationAndTabView: View {
 
     @State private var tabViewSelection: Int = 0
     private var bindedTabViewSelection: Binding<Int>?
@@ -13,7 +13,7 @@ public struct XNavigationAndTabView: View {
     public init<C0>(
         selection: Binding<Int>? = nil,
         _ contents: () -> C0
-    ) where C0: View & XNavigationAndTabContent {
+    ) where C0: View & SNavigationAndTabContent {
         self.bindedTabViewSelection = selection
         self.contents.append(contents().toAnyView())
         self.tabInfosPerContents.append(contents().tabInformation)
@@ -22,8 +22,8 @@ public struct XNavigationAndTabView: View {
     public init<C0, C1>(
         selection: Binding<Int>? = nil,
         _ contents: () -> (C0, C1)
-    ) where C0: View & XNavigationAndTabContent,
-            C1: View & XNavigationAndTabContent {
+    ) where C0: View & SNavigationAndTabContent,
+            C1: View & SNavigationAndTabContent {
         self.init(selection: selection) {( contents().0 )}
         self.contents.append(contents().1.toAnyView())
         self.tabInfosPerContents.append(contents().1.tabInformation)
@@ -32,9 +32,9 @@ public struct XNavigationAndTabView: View {
     public init<C0, C1, C2>(
         selection: Binding<Int>? = nil,
         _ contents: () -> (C0, C1, C2)
-    ) where C0: View & XNavigationAndTabContent,
-            C1: View & XNavigationAndTabContent,
-            C2: View & XNavigationAndTabContent {
+    ) where C0: View & SNavigationAndTabContent,
+            C1: View & SNavigationAndTabContent,
+            C2: View & SNavigationAndTabContent {
         self.init(selection: selection) {( contents().0, contents().1 )}
         self.contents.append(contents().2.toAnyView())
         self.tabInfosPerContents.append(contents().2.tabInformation)
@@ -43,10 +43,10 @@ public struct XNavigationAndTabView: View {
     public init<C0, C1, C2, C3>(
         selection: Binding<Int>? = nil,
         _ contents: () -> (C0, C1, C2, C3)
-    ) where C0: View & XNavigationAndTabContent,
-            C1: View & XNavigationAndTabContent,
-            C2: View & XNavigationAndTabContent,
-            C3: View & XNavigationAndTabContent {
+    ) where C0: View & SNavigationAndTabContent,
+            C1: View & SNavigationAndTabContent,
+            C2: View & SNavigationAndTabContent,
+            C3: View & SNavigationAndTabContent {
         self.init(selection: selection) {( contents().0, contents().1, contents().2 )}
         self.contents.append(contents().3.toAnyView())
         self.tabInfosPerContents.append(contents().3.tabInformation)
@@ -55,11 +55,11 @@ public struct XNavigationAndTabView: View {
     public init<C0, C1, C2, C3, C4>(
         selection: Binding<Int>? = nil,
         _ contents: () -> (C0, C1, C2, C3, C4)
-    ) where C0: View & XNavigationAndTabContent,
-            C1: View & XNavigationAndTabContent,
-            C2: View & XNavigationAndTabContent,
-            C3: View & XNavigationAndTabContent,
-            C4: View & XNavigationAndTabContent {
+    ) where C0: View & SNavigationAndTabContent,
+            C1: View & SNavigationAndTabContent,
+            C2: View & SNavigationAndTabContent,
+            C3: View & SNavigationAndTabContent,
+            C4: View & SNavigationAndTabContent {
         self.init(selection: selection) {( contents().0, contents().1, contents().2, contents().3 )}
         self.contents.append(contents().4.toAnyView())
         self.tabInfosPerContents.append(contents().4.tabInformation)
