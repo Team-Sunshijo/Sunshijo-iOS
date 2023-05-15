@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AuthButton: View {
     var buttonTitle: String
-    var action: () -> ()
+    var action: () -> Void
     public init(
         buttonTitle: String,
         action: @escaping () -> Void
