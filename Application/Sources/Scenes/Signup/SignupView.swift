@@ -41,9 +41,10 @@ struct SignupView: View {
                     border: 1,
                     text: $viewModel.validPassword
                 )
-                AuthButton(
-                    buttonTitle: "회원가입하기"
-                )
+//                AuthButton(
+//                    buttonTitle: "회원가입하기",
+//                    action: viewModel.signup()
+//                )
                 .padding(.top, 55)
                 LoginButton(buttonTitle: "로그인하기")
                 Spacer()

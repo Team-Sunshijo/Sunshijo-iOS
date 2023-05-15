@@ -6,4 +6,7 @@ class SignupViewModel: ObservableObject {
     @Published var userId: String = ""
     @Published var password: String = ""
     @Published var validPassword: String = ""
+    func signup() {
+        print("aa")
+    }
 }
