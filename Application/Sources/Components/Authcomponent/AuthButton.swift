@@ -2,7 +2,11 @@ import SwiftUI
 
 struct AuthButton: View {
     var buttonTitle: String
-
+    var action: () -> ()
+    public init(buttonTitle: String, action: @escaping () -> Void) {
+        self.buttonTitle = buttonTitle
+        self.action = action
+    }
     var body: some View {
         VStack {
             Button(buttonTitle) {
