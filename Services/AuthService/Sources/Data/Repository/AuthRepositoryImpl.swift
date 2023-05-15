@@ -27,7 +27,21 @@ class AuthRepositoryImpl: AuthRepository {
                 return .error(AuthServiceError.notFound)
             }.asCompletable()
     }
-
+    func signup(signupEntity: SignupEntity) -> Completable {
+        self.remoteAuthDataSource.signup(request: signupEntity.toSignupRequest())
+            .do(onCompleted: { [weak self] in
+                print("asdf")
+            })
+            .catch { [weak self] error in
+                let moyaError = error as? MoyaError
+                guard moyaError?.response?.statusCode != nil else { return .error(AuthServiceError.internalServerError) }
+                guard let errorCode = self?.errorToStatusCode(error) else { return .error(error) }
+                switch errorCode {
+                case 409: return .error(AuthServiceError.conflict)
+                default: return .error(error)
+                }
+            }
+    }
     func refreshToken() -> Completable {
         guard let refershToken = self.loaclTokenDataSource.fetchRefreshToken() else {
             return Completable.error(AuthServiceError.unauthorized)
