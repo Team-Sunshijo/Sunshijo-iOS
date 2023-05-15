@@ -1,5 +1,5 @@
 import SwiftUI
 
-public protocol XNavigationAndTabContent {
+public protocol SNavigationAndTabContent {
     var tabInformation: TabInformation { get }
 }
