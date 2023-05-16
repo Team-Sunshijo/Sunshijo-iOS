@@ -3,17 +3,17 @@ import Foundation
 public struct SignupEntity {
     let userName: String
     let userId: String
-    let profileFileImageUrl: URL?
+    let signupCode: String
     let password: String
     public init(
         userName: String,
         userId: String,
-        profileFileImage: URL?,
+        signupCode: String,
         password: String
     ) {
         self.userName = userName
         self.userId = userId
-        self.profileFileImageUrl = profileFileImage
+        self.signupCode = signupCode
         self.password = password
     }
 }
@@ -23,7 +23,7 @@ extension SignupEntity {
         return .init(
             userName: self.userName,
             userId: self.userId,
-            profileFileImage: self.profileFileImageUrl?.absoluteString,
+            signupCode: self.signupCode,
             password: self.password
         )
     }
