@@ -10,7 +10,7 @@ class SunshijoRouterFactory: RouterFactory {
 
     init() {
         let authServiceDependency = AuthServiceDependency.shared
-        let signupViewModel = SignupViewModel()
+        let signupViewModel = SignupViewModel(signupUseCase: authServiceDependency.signupUseCase)
         self.signupView = SignupView(viewModel: signupViewModel)
         let loginViewModel = LoginViewModel(signInUseCase: authServiceDependency.signinUseCase)
         self.loginView = LoginView(viewModel: loginViewModel)
