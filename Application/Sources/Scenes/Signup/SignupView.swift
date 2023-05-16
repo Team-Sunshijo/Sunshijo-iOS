@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SignupView: View {
+    @EnvironmentObject var sunshijoRouter: SunshijoRouter
     @StateObject var viewModel: SignupViewModel
     var body: some View {
         ZStack {
@@ -41,10 +42,10 @@ struct SignupView: View {
                     border: 1,
                     text: $viewModel.validPassword
                 )
-//                AuthButton(
-//                    buttonTitle: "회원가입하기",
-//                    action: viewModel.signup()
-//                )
+                AuthButton(
+                    buttonTitle: "회원가입하기",
+                    action: viewModel.signup
+                )
                 .padding(.top, 55)
                 LoginButton(buttonTitle: "로그인하기")
                 Spacer()
@@ -54,6 +55,11 @@ struct SignupView: View {
             .edgesIgnoringSafeArea([.bottom, .top])
             .padding(.top, 125)
             .authSetShadow()
+            .onChange(of: viewModel.isSuccess, perform: { isSuccess in
+                if isSuccess {
+                    self.sunshijoRouter.dismissLast()
+                }
+            })
         }
     }
 }
