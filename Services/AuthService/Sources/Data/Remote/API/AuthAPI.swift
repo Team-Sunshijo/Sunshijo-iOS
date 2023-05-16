@@ -18,7 +18,7 @@ extension AuthAPI {
         case .signin:
             return "/teacher/auth"
         case .signup:
-                return "/teachers/register"
+                return "/teacher/register"
         case .refreshToken:
             return "/teachers/token"
         }
