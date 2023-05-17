@@ -8,11 +8,9 @@ class SignupViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var validPassword: String = ""
     var signupCode: String = "DsmTeacher"
-    
     @Published var isSuccess: Bool = false
-    
+    @Published var isDisabled: Bool = true
     private let signupUseCase: SignupUseCase
-    
     init(signupUseCase: SignupUseCase) {
         self.signupUseCase = signupUseCase
     }
@@ -35,5 +33,21 @@ class SignupViewModel: ObservableObject {
             }
             self?.isSuccess = false
         }).disposed(by: disposeBag)
+    }
+    func checkSignup() {
+        self.isDisabled = !checkId() || !checkPassword() || !isValidPassword()
+    }
+    func checkId() -> Bool {
+        let strRegEx = "[A-Za-z0-9]{6,20}"
+        let pred = NSPredicate(format: "SELF MATCHES %@", strRegEx)
+        return pred.evaluate(with: self.userId)
+    }
+    func checkPassword() -> Bool {
+        let strRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{6,30}"
+        let pred = NSPredicate(format: "SELF MATCHES %@", strRegEx)
+        return pred.evaluate(with: self.password)
+    }
+    func isValidPassword() -> Bool {
+        return password == validPassword && password != ""
     }
 }
