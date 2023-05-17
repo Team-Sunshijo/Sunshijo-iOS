@@ -23,6 +23,7 @@ struct AuthButton: View {
             .background(SunshijoIOSAsset.Colors.main2.swiftUIColor)
             .foregroundColor(SunshijoIOSAsset.Colors.white.swiftUIColor)
             .cornerRadius(5)
+            .disabled(isDisabled)
         }
     }
 }
