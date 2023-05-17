@@ -29,9 +29,6 @@ class AuthRepositoryImpl: AuthRepository {
     }
     func signup(signupEntity: SignupEntity) -> Completable {
         self.remoteAuthDataSource.signup(request: signupEntity.toSignupRequest())
-            .do(onCompleted: { [weak self] in
-                print("asdf")
-            })
             .catch { [weak self] error in
                 let moyaError = error as? MoyaError
                 guard moyaError?.response?.statusCode != nil else {
