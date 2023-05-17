@@ -26,7 +26,7 @@ struct SignupView: View {
                 }
                 AuthTextField(
                     title: "아이디",
-                    placeholeder: "아이디 입력",
+                    placeholeder: "영문 숫자 6~12자",
                     radius: 5,
                     border: 1,
                     text: $viewModel.userId
@@ -36,7 +36,7 @@ struct SignupView: View {
                 }
                 AuthTextField(
                     title: "비밀번호",
-                    placeholeder: "비밀번호 입력",
+                    placeholeder: "숫자, 영문, 특수문자 조합 최소 6자",
                     radius: 5,
                     border: 1,
                     text: $viewModel.password
@@ -58,7 +58,7 @@ struct SignupView: View {
                     .frame(height: 55)
                 AuthButton(
                     isDisabled: $viewModel.isDisabled,
-                    buttonTitle: "회원가입하기",
+                    buttonTitle: "회원가입",
                     action: viewModel.signup
                 )
                 GoToButton(title: "계정이있으신가요?", buttonTitle: "로그인하기")
