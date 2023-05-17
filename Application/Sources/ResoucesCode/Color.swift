@@ -25,6 +25,7 @@ extension Color {
     static let red = Color("Red")
 
     // Main
+    static let main700 = Color("Main 700")
     static let main800 = Color("Main 800")
     static let main900 = Color("Main 900")
     static let main = Color("Main")
@@ -34,4 +35,7 @@ extension Color {
 
     // White
     static let white = Color("White")
+
+    // Shadow
+    static let authShadowColor = Color("AuthShadowColor")
 }

@@ -5,8 +5,8 @@ public struct AuthServiceDependency {
     public static let shared = Self.resolve()
 
     public let signinUseCase: SigninUseCase
+    public let signupUseCase: SignupUseCase
     public let jwtPlugin: JWTPlugin
-
 }
 
 extension AuthServiceDependency {
@@ -25,6 +25,9 @@ extension AuthServiceDependency {
         let signinUseCase = SigninUseCase(
             authRepository: authRepository
         )
+        let signupUseCase = SignupUseCase(
+            authRepository: authRepository
+        )
 
         // MARK: - Plugin
         let jwtPlugin = JWTPlugin(
@@ -33,6 +36,7 @@ extension AuthServiceDependency {
 
         return AuthServiceDependency(
             signinUseCase: signinUseCase,
+            signupUseCase: signupUseCase,
             jwtPlugin: jwtPlugin
         )
     }
