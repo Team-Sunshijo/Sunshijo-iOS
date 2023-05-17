@@ -22,7 +22,7 @@ class LoginViewModel: ObservableObject {
             ))
         .subscribe(onCompleted: { [weak self] in
             self?.isLoginSuccess = true
-            print("asd")
+            print("성공")
         }, onError: { [weak self] in
             self?.isLoginSuccess = false
             print($0)
