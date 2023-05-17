@@ -6,12 +6,12 @@ struct LoginView: View {
     @State var isLoginButtonDisabled: Bool = true
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: 0) {
                 Image("Sunshijo")
                     .padding(.top, 98)
                 Spacer()
             }
-            VStack {
+            VStack(spacing: 0) {
                 Text("로그인")
                     .padding(.top, 40)
                     .font(.system(size: 20, weight: .semibold))
@@ -45,7 +45,7 @@ struct LoginView: View {
                     buttonTitle: "로그인",
                     action: viewModel.login
                 )
-                SignupButton(buttonTitle: "회원가입하기")
+                GoToButton(title: "계정이없으신가요?", buttonTitle: "회원가입하기")
                 Spacer()
             }
             .background(SunshijoIOSAsset.Colors.white.swiftUIColor)

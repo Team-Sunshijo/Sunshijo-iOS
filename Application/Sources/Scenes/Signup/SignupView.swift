@@ -7,10 +7,10 @@ struct SignupView: View {
         ZStack {
             VStack {
                 Image("Sunshijo")
-                    .padding(.top, 98)
                 Spacer()
             }
-            VStack {
+            .padding(.top, 51)
+            VStack(spacing: 0) {
                 Text("회원가입")
                     .padding([.top, .bottom], 40)
                     .font(.system(size: 20, weight: .semibold))
@@ -54,13 +54,14 @@ struct SignupView: View {
                 .onChange(of: viewModel.validPassword) { _ in
                     viewModel.checkSignup()
                 }
+                Spacer()
+                    .frame(height: 55)
                 AuthButton(
                     isDisabled: $viewModel.isDisabled,
                     buttonTitle: "회원가입하기",
                     action: viewModel.signup
                 )
-                .padding(.top, 55)
-                LoginButton(buttonTitle: "로그인하기")
+                GoToButton(title: "계정이있으신가요?", buttonTitle: "로그인하기")
                 Spacer()
             }
             .onChange(of: viewModel.isSuccess, perform: { isSuccess in
