@@ -41,6 +41,7 @@ struct LoginView: View {
                     })
                 .padding(.bottom, 80)
                 AuthButton(
+                    isDisabled: $isLoginButtonDisabled,
                     buttonTitle: "로그인",
                     action: viewModel.login
                 )
