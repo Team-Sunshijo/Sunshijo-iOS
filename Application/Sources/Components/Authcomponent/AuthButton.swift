@@ -1,12 +1,15 @@
 import SwiftUI
 
 struct AuthButton: View {
+    @Binding var isDisabled: Bool
     var buttonTitle: String
     var action: () -> Void
     public init(
+        isDisabled: Binding<Bool> = .constant(false),
         buttonTitle: String,
         action: @escaping () -> Void
     ) {
+        self._isDisabled = isDisabled
         self.buttonTitle = buttonTitle
         self.action = action
     }
