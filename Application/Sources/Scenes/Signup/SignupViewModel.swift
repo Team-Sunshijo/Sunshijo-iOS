@@ -35,7 +35,7 @@ class SignupViewModel: ObservableObject {
         }).disposed(by: disposeBag)
     }
     func checkSignup() {
-        self.isDisabled = !checkId() || !checkPassword() || !isValidPassword() || isCheckName()
+        self.isDisabled = !checkId() || !checkPassword() || !isValidPassword() || !isCheckName()
     }
     func isCheckName() -> Bool {
         return name == ""
