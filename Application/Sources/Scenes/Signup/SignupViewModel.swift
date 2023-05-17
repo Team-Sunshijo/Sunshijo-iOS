@@ -35,7 +35,10 @@ class SignupViewModel: ObservableObject {
         }).disposed(by: disposeBag)
     }
     func checkSignup() {
-        self.isDisabled = !checkId() || !checkPassword() || !isValidPassword()
+        self.isDisabled = !checkId() || !checkPassword() || !isValidPassword() || isCheckName()
+    }
+    func isCheckName() -> Bool {
+        return name == ""
     }
     func checkId() -> Bool {
         let strRegEx = "[A-Za-z0-9]{6,20}"

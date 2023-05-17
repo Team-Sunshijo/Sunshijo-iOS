@@ -21,6 +21,9 @@ struct SignupView: View {
                     border: 1,
                     text: $viewModel.name
                 )
+                .onChange(of: viewModel.name) { _ in
+                    viewModel.checkSignup()
+                }
                 AuthTextField(
                     title: "아이디",
                     placeholeder: "아이디 입력",
