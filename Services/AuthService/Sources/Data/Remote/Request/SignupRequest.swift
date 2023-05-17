@@ -9,6 +9,6 @@ struct SignupRequest: Encodable {
     }
     let userName: String
     let userId: String
-    let signupCode: String?
+    let signupCode: String
     let password: String
 }
