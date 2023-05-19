@@ -69,7 +69,7 @@ struct SignupView: View {
                     self.sunshijoRouter.dismissLast()
                 }
             })
-            .background(SunshijoIOSAsset.Colors.white.swiftUIColor)
+            .background(Color.white)
             .cornerRadius(30)
             .edgesIgnoringSafeArea([.bottom, .top])
             .padding(.top, 125)

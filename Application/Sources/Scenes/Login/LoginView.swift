@@ -48,7 +48,7 @@ struct LoginView: View {
                 GoToButton(title: "계정이없으신가요?", buttonTitle: "회원가입하기")
                 Spacer()
             }
-            .background(SunshijoIOSAsset.Colors.white.swiftUIColor)
+            .background(.white)
             .cornerRadius(30)
             .edgesIgnoringSafeArea([.bottom, .top])
             .padding(.top, 297)
