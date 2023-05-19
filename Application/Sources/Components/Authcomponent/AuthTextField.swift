@@ -15,7 +15,7 @@ struct AuthTextField: View {
                 ))
             TextField(placeholeder, text: $text)
                 .frame(height: 40)
-                .padding(.leading, 15)
+                .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                 .border(SunshijoIOSAsset.Colors.gray200.swiftUIColor, width: 1)
                 .cornerRadius(5)
                 .font(.system(
