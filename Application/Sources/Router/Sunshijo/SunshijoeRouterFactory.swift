@@ -8,6 +8,13 @@ class SunshijoRouterFactory: RouterFactory {
     let signupView: SignupView
     let loginView: LoginView
 
+    // main
+    let mainView: MainView
+    let timeTableView: TimeTableView
+    let scheduleView: ScheduleView
+    let evaluationView: EvaluationView
+    let etcView: EtcView
+
     init() {
         let authServiceDependency = AuthServiceDependency.shared
         let signupViewModel = SignupViewModel(signupUseCase: authServiceDependency.signupUseCase)
@@ -22,6 +29,16 @@ class SunshijoRouterFactory: RouterFactory {
             signupView
         case .login:
             loginView
+        case .main:
+            mainView
+        case .timeTable:
+            timeTableView
+        case .schedule:
+            scheduleView
+        case .evaluation:
+            evaluationView
+        case .etc:
+            etcView
         }
     }
 }
