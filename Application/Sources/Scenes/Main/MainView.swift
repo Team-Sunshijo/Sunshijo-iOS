@@ -2,6 +2,7 @@ import SwiftUI
 import SNavigationAndTab
 
 struct MainView: View {
+
     @EnvironmentObject var sunshijoRouter: SunshijoRouter
     let timeTableView: TimeTableView
     let scheduleView: ScheduleView
