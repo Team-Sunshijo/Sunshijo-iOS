@@ -4,7 +4,7 @@ enum SunshijoRoute: ScreenProtocol {
     case signup
     case login
     case main
-    
+
     case timeTable
     case schedule
     case evaluation
