@@ -9,11 +9,11 @@ struct MainView: View {
     let evaluationView: EvaluationView
     let etcView: EtcView
     var body: some View {
-        SNavigationAndTabView(selection: $sunshijoRouter.tabBarSelection) {
+        SNavigationAndTabView(selection: $sunshijoRouter.tabBarSelection) {(
             timeTableView,
             scheduleView,
             evaluationView,
             etcView
-        }
+        )}
     }
 }
