@@ -6,7 +6,9 @@ struct TimeTableView: View, SNavigationAndTabContent {
     var tabInformation: TabInformation {
         TabInformation(
             tabItemText: "시간표",
-            tabItemImage: .timeTable)
+            tabItemImage: .timeTable,
+            backgroundColor: .gray50
+        )
     }
     var body: some View {
         VStack {

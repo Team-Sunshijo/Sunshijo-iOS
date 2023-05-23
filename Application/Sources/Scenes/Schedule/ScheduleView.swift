@@ -5,8 +5,9 @@ struct ScheduleView: View, SNavigationAndTabContent {
     let viewModel: ScheduleViewModel
     var tabInformation: TabInformation {
         TabInformation(
-            tabItemText: "시간표",
-            tabItemImage: .schedule
+            tabItemText: "학사일정",
+            tabItemImage: .schedule,
+            backgroundColor: .gray50
         )
     }
     var body: some View {

@@ -12,7 +12,7 @@ enum SunshijoRoute: ScreenProtocol {
 
     var embedInNavigationView: Bool {
         switch self {
-        case .signup, .login:
+        case .signup, .login, .evaluation, .etc, .schedule, .timeTable:
             return false
         default:
             return true
