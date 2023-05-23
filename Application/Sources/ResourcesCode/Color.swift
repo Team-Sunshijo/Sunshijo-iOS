@@ -36,6 +36,6 @@ extension Color {
     // White
     static let white = Color("White")
 
-    // Shadow
+    // AuthShadowColor
     static let authShadowColor = Color("AuthShadowColor")
 }
