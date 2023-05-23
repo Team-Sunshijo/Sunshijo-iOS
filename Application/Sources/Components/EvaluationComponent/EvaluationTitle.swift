@@ -10,7 +10,8 @@ struct EvaluationTitle: View {
                 .padding(.top, 45)
                 .padding(.leading, 40)
             Text("\(count)")
-                .padding(.top, 51)
+                .padding(.top, 54)
+                .foregroundColor(Color.main)
             Spacer()
         }
     }
