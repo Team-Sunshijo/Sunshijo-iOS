@@ -16,21 +16,24 @@ class SunshijoRouterFactory: RouterFactory {
     let etcView: EtcView
 
     init() {
+        // Dependency
         let authServiceDependency = AuthServiceDependency.shared
+
+        // ViewModel
         let signupViewModel = SignupViewModel(signupUseCase: authServiceDependency.signupUseCase)
-        self.signupView = SignupView(viewModel: signupViewModel)
         let loginViewModel = LoginViewModel(signInUseCase: authServiceDependency.signinUseCase)
-        self.loginView = LoginView(viewModel: loginViewModel)
         let timeTableViewModel = TimeTableViewModel()
         let evaluationViewModel = EvaluationViewModel()
         let scheduleViewModel = ScheduleViewModel()
         let etcViewModel = EtcViewModel()
 
+        // View
+        self.signupView = SignupView(viewModel: signupViewModel)
+        self.loginView = LoginView(viewModel: loginViewModel)
         self.timeTableView = TimeTableView(viewModel: timeTableViewModel)
         self.scheduleView = ScheduleView(viewModel: scheduleViewModel)
         self.evaluationView = EvaluationView(viewModel: evaluationViewModel)
         self.etcView = EtcView(viewModel: etcViewModel)
-
         self.mainView = MainView(
             timeTableView: .init(viewModel: timeTableViewModel),
             scheduleView: .init(viewModel: scheduleViewModel),
