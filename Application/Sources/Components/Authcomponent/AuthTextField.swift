@@ -3,8 +3,6 @@ import SwiftUI
 struct AuthTextField: View {
     var title: String
     var placeholeder: String
-    var radius: CGFloat
-    var border: CGFloat
     @Binding var text: String
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {

@@ -17,8 +17,6 @@ struct SignupView: View {
                 AuthTextField(
                     title: "이름",
                     placeholeder: "이름 입력",
-                    radius: 5,
-                    border: 1,
                     text: $viewModel.name
                 )
                 .onChange(of: viewModel.name) { _ in
@@ -27,8 +25,6 @@ struct SignupView: View {
                 AuthTextField(
                     title: "아이디",
                     placeholeder: "영문 숫자 6~12자",
-                    radius: 5,
-                    border: 1,
                     text: $viewModel.userId
                 )
                 .onChange(of: viewModel.userId) { _ in
@@ -37,8 +33,6 @@ struct SignupView: View {
                 AuthTextField(
                     title: "비밀번호",
                     placeholeder: "숫자, 영문, 특수문자 조합 최소 6자",
-                    radius: 5,
-                    border: 1,
                     text: $viewModel.password
                 )
                 .onChange(of: viewModel.password) { _ in
@@ -47,8 +41,6 @@ struct SignupView: View {
                 AuthTextField(
                     title: "비밀번호 확인",
                     placeholeder: "비밀번호 입력",
-                    radius: 5,
-                    border: 1,
                     text: $viewModel.validPassword
                 )
                 .onChange(of: viewModel.validPassword) { _ in

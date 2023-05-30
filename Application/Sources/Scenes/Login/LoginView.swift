@@ -18,8 +18,6 @@ struct LoginView: View {
                 AuthTextField(
                     title: "아이디",
                     placeholeder: "아이디 입력",
-                    radius: 5,
-                    border: 1,
                     text: $viewModel.userId
                 )
                 .onChange(
@@ -30,8 +28,6 @@ struct LoginView: View {
                 AuthTextField(
                     title: "비밀번호",
                     placeholeder: "비밀번호 입력",
-                    radius: 5,
-                    border: 1,
                     text: $viewModel.password
                 )
                 .onChange(
