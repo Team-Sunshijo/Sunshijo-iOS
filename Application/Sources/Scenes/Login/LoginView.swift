@@ -41,7 +41,9 @@ struct LoginView: View {
                     buttonTitle: "로그인",
                     action: viewModel.login
                 )
-                GoToButton(title: "계정이없으신가요?", buttonTitle: "회원가입하기")
+                GoToButton(title: "계정이없으신가요?", buttonTitle: "회원가입하기", action: {
+                    self.sunshijoRouter.presentFullScreen(.signup)
+                })
                 Spacer()
             }
             .background(.white)
