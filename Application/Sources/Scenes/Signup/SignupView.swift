@@ -53,7 +53,9 @@ struct SignupView: View {
                     buttonTitle: "회원가입",
                     action: viewModel.signup
                 )
-                GoToButton(title: "계정이있으신가요?", buttonTitle: "로그인하기")
+                GoToButton(title: "계정이있으신가요?", buttonTitle: "로그인하기", action: {
+                    self.sunshijoRouter.dismissLast()
+                })
                 Spacer()
             }
             .onChange(of: viewModel.isSuccess, perform: { isSuccess in
