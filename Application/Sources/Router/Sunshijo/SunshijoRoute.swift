@@ -14,7 +14,7 @@ enum SunshijoRoute: ScreenProtocol {
 
     var embedInNavigationView: Bool {
         switch self {
-        case .launch,.signup, .login, .evaluation, .etc, .schedule, .timeTable:
+        case .launch, .signup, .login, .evaluation, .etc, .schedule, .timeTable:
             return false
         default:
             return true
