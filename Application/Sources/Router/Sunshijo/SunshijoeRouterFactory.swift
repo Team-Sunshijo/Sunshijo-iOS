@@ -5,6 +5,7 @@ import AuthService
 class SunshijoRouterFactory: RouterFactory {
 
     // MARK: - View
+    let launchScreenView: LaunchScreenView
     let signupView: SignupView
     let loginView: LoginView
 
@@ -39,10 +40,13 @@ class SunshijoRouterFactory: RouterFactory {
             scheduleView: .init(viewModel: scheduleViewModel),
             evaluationView: .init(viewModel: evaluationViewModel),
             etcView: .init(viewModel: etcViewModel))
+        self.launchScreenView = LaunchScreenView()
     }
 
     @ViewBuilder func makeBody(for screen: SunshijoRoute) -> some View {
         switch screen {
+        case .launch:
+            launchScreenView
         case .signup:
             signupView
         case .login:

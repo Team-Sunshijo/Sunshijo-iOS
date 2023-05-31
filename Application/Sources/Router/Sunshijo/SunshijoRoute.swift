@@ -1,6 +1,8 @@
 import Foundation
 
 enum SunshijoRoute: ScreenProtocol {
+
+    case launch
     case signup
     case login
     case main
@@ -12,7 +14,7 @@ enum SunshijoRoute: ScreenProtocol {
 
     var embedInNavigationView: Bool {
         switch self {
-        case .signup, .login, .evaluation, .etc, .schedule, .timeTable:
+        case .launch, .signup, .login, .evaluation, .etc, .schedule, .timeTable:
             return false
         default:
             return true
