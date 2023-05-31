@@ -8,7 +8,7 @@ class LoaclTokenDataSourceImpl: LoaclTokenDataSource {
     let keychain = KeychainModule<KeychainTypeForAuth>()
 
     init() {
-        keychain.accessGroup = "5G56CAU886.com.xquare.XQUARE-iOS.keychainGroup"
+        keychain.accessGroup = "5G56CAU886.com.KODOMO.Sunshijo-iOS.keychainGroup"
     }
 
     func registerAccessToken(_ accessToken: String) {
