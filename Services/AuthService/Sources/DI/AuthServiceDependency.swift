@@ -4,6 +4,10 @@ public struct AuthServiceDependency {
 
     public static let shared = Self.resolve()
 
+    public let checkIsTokenValidUseCase: CheckIsTokenValidUseCase
+    public let fetchAccessTokenUseCase: FetchAccessTokenUseCase
+    public let refreshTokenUseCase: RefreshTokenUseCase
+    public let refreshTokenIfExpiredUseCase: RefreshTokenIfExpiredUseCase
     public let signinUseCase: SigninUseCase
     public let signupUseCase: SignupUseCase
     public let jwtPlugin: JWTPlugin
@@ -22,6 +26,18 @@ extension AuthServiceDependency {
         )
 
         // MARK: - UseCases
+        let checkIsTokenValidUseCase = CheckIsTokenValidUseCase(
+            authRepository: authRepository
+        )
+        let fetchAccessTokenUseCase = FetchAccessTokenUseCase(
+            authRepository: authRepository
+        )
+        let refreshTokenUseCase = RefreshTokenUseCase(
+            authRepository: authRepository
+        )
+        let refreshTokenIfExpiredUseCase = RefreshTokenIfExpiredUseCase(
+            authRepository: authRepository
+        )
         let signinUseCase = SigninUseCase(
             authRepository: authRepository
         )
@@ -35,6 +51,10 @@ extension AuthServiceDependency {
         )
 
         return AuthServiceDependency(
+            checkIsTokenValidUseCase: checkIsTokenValidUseCase,
+            fetchAccessTokenUseCase: fetchAccessTokenUseCase,
+            refreshTokenUseCase: refreshTokenUseCase,
+            refreshTokenIfExpiredUseCase: refreshTokenIfExpiredUseCase,
             signinUseCase: signinUseCase,
             signupUseCase: signupUseCase,
             jwtPlugin: jwtPlugin
