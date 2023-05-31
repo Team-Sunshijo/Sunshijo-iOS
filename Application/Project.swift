@@ -23,7 +23,8 @@ let project = Project(
                 .Module.KeychainModule,
                 .Service.AuthService,
                 .Module.SDateUtil,
-                .Module.SNavigationAndTab
+                .Module.SNavigationAndTab,
+                .Module.RestApiModule
             ])
     ]
 )
