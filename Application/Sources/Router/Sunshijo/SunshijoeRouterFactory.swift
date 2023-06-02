@@ -31,6 +31,7 @@ class SunshijoRouterFactory: RouterFactory {
         let evaluationViewModel = EvaluationViewModel()
         let scheduleViewModel = ScheduleViewModel()
         let etcViewModel = EtcViewModel()
+        let launchScreenViewModel = LaunchScreenViewModel(refreshTokenUseCase: authServiceDependency.refreshTokenUseCase)
 
         // View
         self.signupView = SignupView(viewModel: signupViewModel)
@@ -44,7 +45,7 @@ class SunshijoRouterFactory: RouterFactory {
             scheduleView: .init(viewModel: scheduleViewModel),
             evaluationView: .init(viewModel: evaluationViewModel),
             etcView: .init(viewModel: etcViewModel))
-        self.launchScreenView = LaunchScreenView()
+        self.launchScreenView = LaunchScreenView(viewModel: launchScreenViewModel)
     }
 
     @ViewBuilder func makeBody(for screen: SunshijoRoute) -> some View {
