@@ -54,7 +54,7 @@ struct LoginView: View {
         }
         .onChange(of: viewModel.isLoginSuccess, perform: { isSuccess in
             if isSuccess {
-                self.sunshijoRouter.presentFullScreen(.signup)
+                self.sunshijoRouter.presentFullScreen(.main)
                 self.sunshijoRouter.moveTabTo(index: 0)
                 self.viewModel.isLoginSuccess = false
             }
