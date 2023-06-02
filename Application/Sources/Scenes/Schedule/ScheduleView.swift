@@ -1,13 +1,13 @@
 import SwiftUI
 import SNavigationAndTab
-
+import SunshijoDesign
 struct ScheduleView: View, SNavigationAndTabContent {
     let viewModel: ScheduleViewModel
     var tabInformation: TabInformation {
         TabInformation(
             tabItemText: "학사일정",
             tabItemImage: .schedule,
-            backgroundColor: .gray50
+            backgroundColor: .GrayScale.gray50
         )
     }
     var body: some View {

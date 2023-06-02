@@ -20,6 +20,7 @@ let project = Project(
             resources: ["Resources/**"],
             scripts: [.swiftLintScript],
             dependencies: [
+                .SPM.SunshijoDesign,
                 .Module.KeychainModule,
                 .Service.AuthService,
                 .Service.TimeTableService,
