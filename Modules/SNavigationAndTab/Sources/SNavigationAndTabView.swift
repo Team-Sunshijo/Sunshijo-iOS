@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import SunshijoDesign
 
 // swiftlint:disable large_tuple
 public struct SNavigationAndTabView: View {
@@ -78,7 +79,7 @@ public struct SNavigationAndTabView: View {
                 }
                 .navigationViewStyle(.stack)
                 .opacity(index == getTabViewSelection() ? 1 : 0)
-                .accentColor(Color("Gray 900"))
+                .accentColor(.GrayScale.gray900)
             }
         }
         .environment(\.tabBarSelection, bindedTabViewSelection ?? $tabViewSelection)
@@ -102,7 +103,7 @@ public struct SNavigationAndTabView: View {
                             .font(.system(size: 10, weight: .medium))
                     }
                     .frame(width: 70)
-                    .tint(index == getTabViewSelection() ? Color("Main") : Color("Gray 900"))
+                    .tint(index == getTabViewSelection() ? .Primary.main: .GrayScale.gray900)
                 })
                 Spacer()
             }
