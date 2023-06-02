@@ -39,6 +39,11 @@ let depencies = Dependencies(
         .remote(
             url: "https://github.com/socketio/socket.io-client-swift.git",
             requirement: .upToNextMajor(from: "16.0.1")
+        ),
+        // SunshijoDesign_iOS
+        .remote(
+            url: "https://github.com/Team-Sunshijo/SunshijoDesign_iOS.git",
+            requirement: .upToNextMajor(from: "1.0.3")
         )
     ]),
     platforms: [.iOS]
