@@ -26,8 +26,10 @@ extension AuthAPI {
 
     var method: Moya.Method {
         switch self {
-        case .signin, .signup, .refreshToken:
+        case .signin, .signup:
             return .post
+        case .refreshToken:
+            return .put
         }
     }
 
