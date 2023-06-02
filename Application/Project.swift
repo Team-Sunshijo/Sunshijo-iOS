@@ -22,6 +22,7 @@ let project = Project(
             dependencies: [
                 .Module.KeychainModule,
                 .Service.AuthService,
+                .Service.TimeTableService,
                 .Module.SDateUtil,
                 .Module.SNavigationAndTab,
                 .Module.RestApiModule

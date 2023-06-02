@@ -1,6 +1,7 @@
 import SwiftUI
 
 import AuthService
+import TimeTableService
 
 class SunshijoRouterFactory: RouterFactory {
 
@@ -19,11 +20,14 @@ class SunshijoRouterFactory: RouterFactory {
     init() {
         // Dependency
         let authServiceDependency = AuthServiceDependency.shared
+        let timeTableServiceDependency = TimeTableServiceDependency.shared
 
         // ViewModel
         let signupViewModel = SignupViewModel(signupUseCase: authServiceDependency.signupUseCase)
         let loginViewModel = LoginViewModel(signInUseCase: authServiceDependency.signinUseCase)
-        let timeTableViewModel = TimeTableViewModel()
+        let timeTableViewModel = TimeTableViewModel(
+            fetchTimeTableListUseCase: timeTableServiceDependency.fetchTimeTableListUseCase
+        )
         let evaluationViewModel = EvaluationViewModel()
         let scheduleViewModel = ScheduleViewModel()
         let etcViewModel = EtcViewModel()
