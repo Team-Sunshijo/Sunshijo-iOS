@@ -12,5 +12,6 @@ extension TargetDependency {
         public static let RxFlow = TargetDependency.external(name: "RxFlow")
         public static let Kingfisher = TargetDependency.external(name: "Kingfisher")
         public static let SocketIO = TargetDependency.external(name: "SocketIO")
+        public static let SunshijoDesign = TargetDependency.external(name: "SunshijoDesign")
     }
 }

@@ -1,5 +1,6 @@
 import SwiftUI
 import SNavigationAndTab
+import SunshijoDesign
 
 struct EvaluationView: View, SNavigationAndTabContent {
     let viewModel: EvaluationViewModel
@@ -7,15 +8,21 @@ struct EvaluationView: View, SNavigationAndTabContent {
         TabInformation(
             tabItemText: "수행평가",
             tabItemImage: .evaluation,
-            backgroundColor: .gray50
+            backgroundColor: .GrayScale.gray50
         )
     }
     var body: some View {
         VStack {
-            EvaluationTitle(
-                title: "나의 수행평가",
-                count: 5
-            )
+            HStack(spacing: 15) {
+                Text("나의 수행평가")
+                    .font(.system(size: 24, weight: .semibold))
+                    .padding(.top, 45)
+                    .padding(.leading, 40)
+                Text("5")
+                    .padding(.top, 54)
+                    .foregroundColor(.Primary.main)
+                Spacer()
+            }
             ScrollView {
                 Spacer().frame(height: 10)
                 EvaluationCell(

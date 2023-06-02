@@ -1,5 +1,5 @@
 import SwiftUI
-
+import SunshijoDesign
 struct SignupView: View {
     @EnvironmentObject var sunshijoRouter: SunshijoRouter
     @StateObject var viewModel: SignupViewModel
@@ -12,35 +12,35 @@ struct SignupView: View {
             .padding(.top, 51)
             VStack(spacing: 0) {
                 Text("회원가입")
+                    .sdText(type: .semiBold20)
                     .padding([.top, .bottom], 40)
-                    .font(.system(size: 20, weight: .semibold))
-                AuthTextField(
+                SDTextField(
                     title: "이름",
-                    placeholeder: "이름 입력",
+                    placeholder: "이름 입력",
                     text: $viewModel.name
                 )
                 .onChange(of: viewModel.name) { _ in
                     viewModel.checkSignup()
                 }
-                AuthTextField(
+                SDTextField(
                     title: "아이디",
-                    placeholeder: "영문 숫자 6~12자",
+                    placeholder: "영문 숫자 6~12자",
                     text: $viewModel.userId
                 )
                 .onChange(of: viewModel.userId) { _ in
                     viewModel.checkSignup()
                 }
-                AuthTextField(
+                SDTextField(
                     title: "비밀번호",
-                    placeholeder: "숫자, 영문, 특수문자 조합 최소 6자",
+                    placeholder: "숫자, 영문, 특수문자 조합 최소 6자",
                     text: $viewModel.password
                 )
                 .onChange(of: viewModel.password) { _ in
                     viewModel.checkSignup()
                 }
-                AuthTextField(
+                SDTextField(
                     title: "비밀번호 확인",
-                    placeholeder: "비밀번호 입력",
+                    placeholder: "비밀번호 입력",
                     text: $viewModel.validPassword
                 )
                 .onChange(of: viewModel.validPassword) { _ in
@@ -50,7 +50,7 @@ struct SignupView: View {
                     .frame(height: 55)
                 AuthButton(
                     isDisabled: $viewModel.isDisabled,
-                    buttonTitle: "회원가입",
+                    text: "회원가입",
                     action: viewModel.signup
                 )
                 GoToButton(title: "계정이있으신가요?", buttonTitle: "로그인하기", action: {
@@ -67,7 +67,7 @@ struct SignupView: View {
             .cornerRadius(30)
             .edgesIgnoringSafeArea([.bottom, .top])
             .padding(.top, 125)
-            .authSetShadow()
+            .shadow(color: .authShadow, radius: 10, x: 0, y: -4)
         }
     }
 }
