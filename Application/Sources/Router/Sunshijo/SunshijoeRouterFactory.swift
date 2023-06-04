@@ -31,7 +31,9 @@ class SunshijoRouterFactory: RouterFactory {
         let evaluationViewModel = EvaluationViewModel()
         let scheduleViewModel = ScheduleViewModel()
         let etcViewModel = EtcViewModel()
-        let launchScreenViewModel = LaunchScreenViewModel(refreshTokenUseCase: authServiceDependency.refreshTokenUseCase)
+        let launchScreenViewModel = LaunchScreenViewModel(
+            refreshTokenUseCase: authServiceDependency.refreshTokenUseCase
+        )
 
         // View
         self.signupView = SignupView(viewModel: signupViewModel)
