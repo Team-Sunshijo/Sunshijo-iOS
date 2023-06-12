@@ -26,8 +26,10 @@ extension AuthAPI {
 
     var method: Moya.Method {
         switch self {
-        case .signin, .signup, .refreshToken:
+        case .signin, .signup:
             return .post
+        case .refreshToken:
+            return .put
         }
     }
 
@@ -49,7 +51,7 @@ extension AuthAPI {
     var headers: [String: String]? {
         switch self {
         case .refreshToken(let refreshToken):
-            return ["Refresh-Token": "Bearer \(refreshToken)"]
+            return ["Refresh-Token": "Bearer \(refreshToken)", "Contect-Type": "application/json"]
         default:
             return nil
         }
