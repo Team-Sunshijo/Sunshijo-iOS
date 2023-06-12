@@ -18,6 +18,7 @@ class LaunchScreenViewModel: ObservableObject {
         self.isSuccessToRefreshToken = false
         self.isFailureToRefreshToken = false
         self.refreshTokenUseCase.excute()
+            .delaySubscription(.seconds(1), scheduler: MainScheduler.instance)
             .subscribe(onCompleted: {
                 self.isSuccessToRefreshToken = true
             }, onError: { abc in
