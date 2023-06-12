@@ -21,8 +21,7 @@ class LaunchScreenViewModel: ObservableObject {
             .delaySubscription(.seconds(1), scheduler: MainScheduler.instance)
             .subscribe(onCompleted: {
                 self.isSuccessToRefreshToken = true
-            }, onError: { abc in
-                print(abc)
+            }, onError: { _ in
                 self.isFailureToRefreshToken = true
             })
             .disposed(by: disposeBag)
