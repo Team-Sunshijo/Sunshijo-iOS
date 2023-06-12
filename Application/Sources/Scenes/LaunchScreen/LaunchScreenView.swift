@@ -13,9 +13,11 @@ struct LaunchScreenView: View {
                     self.viewModel.isSuccessToRefreshToken = false
                 }
             })
-            .onChange(of: viewModel.isFailureToRefreshToken, perform: { _ in
-                self.sunshijoRouter.presentFullScreen(.login)
-                self.viewModel.isFailureToRefreshToken = false
+            .onChange(of: viewModel.isFailureToRefreshToken, perform: { isFail in
+                if isFail {
+                    self.sunshijoRouter.presentFullScreen(.login)
+                    self.viewModel.isFailureToRefreshToken = false
+                }
             })
             .onChange(of: self.sunshijoRouter.stack.last?.screen, perform: {
                 guard $0 == .launch else { return }
