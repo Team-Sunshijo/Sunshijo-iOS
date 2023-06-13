@@ -18,8 +18,12 @@ struct EvaluationView: View, SNavigationAndTabContent {
                     .font(.system(size: 24, weight: .semibold))
                     .padding(.top, 45)
                     .padding(.leading, 40)
-                Text("5")
-                    .padding(.top, 54)
+                Text("1")
+                    .padding(.vertical, 3)
+                    .padding(.horizontal, 12)
+                    .background(Color.Primary.main4)
+                    .cornerRadius(12)
+                    .padding(.top, 49)
                     .foregroundColor(.Primary.main)
                 Spacer()
             }
@@ -28,7 +32,8 @@ struct EvaluationView: View, SNavigationAndTabContent {
                 EvaluationCell(
                     title: "수학 수행평가",
                     teacher: "고진영 선생님",
-                    detailText: "그래프 그리기 수행평가 안내.."
+                    detailText: "그래프 그리기 수행평가 안내..",
+                    dateText: "2020-09-02"
                 )
             }
         }
