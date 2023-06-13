@@ -26,7 +26,7 @@ struct EvaluationCell: View {
             HStack {
                 Spacer()
                 Text(dateText)
-                    .sdText(type: .regular12, textColor: .GrayScale.gray700)
+                    .sdText(type: .regular10, textColor: .GrayScale.gray700)
                     .padding(.trailing, 22)
             }
             Spacer()
