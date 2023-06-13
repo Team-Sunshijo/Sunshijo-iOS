@@ -28,7 +28,8 @@ struct EvaluationView: View, SNavigationAndTabContent {
                 EvaluationCell(
                     title: "수학 수행평가",
                     teacher: "고진영 선생님",
-                    detailText: "그래프 그리기 수행평가 안내.."
+                    detailText: "그래프 그리기 수행평가 안내..",
+                    dateText: "2020-09-02"
                 )
             }
         }
