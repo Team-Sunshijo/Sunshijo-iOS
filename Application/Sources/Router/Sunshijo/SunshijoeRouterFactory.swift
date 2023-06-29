@@ -59,6 +59,7 @@ class SunshijoRouterFactory: RouterFactory {
         self.errorReportView = ErrorReportView(viewModel: errorReportViewModel)
     }
 
+    // swiftlint:disable cyclomatic_complexity
     @ViewBuilder func makeBody(for screen: SunshijoRoute) -> some View {
         switch screen {
         case .launch:
@@ -85,4 +86,5 @@ class SunshijoRouterFactory: RouterFactory {
             errorReportView
         }
     }
+    // swiftlint:enable cyclomatic_complexity
 }
