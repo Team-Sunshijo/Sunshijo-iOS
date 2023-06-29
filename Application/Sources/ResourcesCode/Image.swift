@@ -8,4 +8,8 @@ extension Image {
     static let schedule = Image("Schedule")
     static let evaluation = Image("Evaluation")
     static let etc = Image("Etc")
+    static let danger = Image("Danger")
+    static let logout = Image("Logout")
+    static let profile = Image("Profile")
+    static let passwordCheck = Image("PasswordCheck")
 }
