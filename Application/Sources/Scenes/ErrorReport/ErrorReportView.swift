@@ -22,6 +22,8 @@ struct ErrorReportView: View {
                     Text("신고하기")
                         .sdText(type: .semiBold16, textColor: .GrayScale.white)
                         .frame(width: 100, height: 40)
+                        .background(Color.Primary.main)
+                        .cornerRadius(5)
                 })
             }
             Spacer()
