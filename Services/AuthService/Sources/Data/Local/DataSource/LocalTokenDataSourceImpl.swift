@@ -3,7 +3,7 @@ import Foundation
 import KeychainModule
 import SDateUtil
 
-class LoaclTokenDataSourceImpl: LoaclTokenDataSource {
+class LocalTokenDataSourceImpl: LocalTokenDataSource {
 
     let keychain = KeychainModule<KeychainTypeForAuth>()
 
@@ -34,6 +34,12 @@ class LoaclTokenDataSourceImpl: LoaclTokenDataSource {
     func fetchExpiredDate() -> Date? {
         self.keychain.get(.expiredAt)?
             .toDate(format: .fullDateWithMilliSecondTime)
+    }
+
+    func resetToken() {
+        self.keychain.delete(.accessToken)
+        self.keychain.delete(.refreshToken)
+        self.keychain.delete(.expiredAt)
     }
 
 }

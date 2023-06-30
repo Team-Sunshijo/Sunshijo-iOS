@@ -10,6 +10,7 @@ public struct AuthServiceDependency {
     public let refreshTokenIfExpiredUseCase: RefreshTokenIfExpiredUseCase
     public let signinUseCase: SigninUseCase
     public let signupUseCase: SignupUseCase
+    public let logoutUseCase: LogoutUseCase
     public let jwtPlugin: JWTPlugin
 }
 
@@ -17,12 +18,12 @@ extension AuthServiceDependency {
     static func resolve() -> AuthServiceDependency {
         // MARK: - Datasources
         let remoteAuthDataSource: RemoteAuthDataSource = RemoteAuthDataSourceImpl()
-        let loaclTokenDataSource: LoaclTokenDataSource = LoaclTokenDataSourceImpl()
+        let localTokenDataSource: LocalTokenDataSource = LocalTokenDataSourceImpl()
 
         // MARK: - Respositories
         let authRepository: AuthRepository = AuthRepositoryImpl(
             remoteAuthDataSource: remoteAuthDataSource,
-            loaclTokenDataSource: loaclTokenDataSource
+            localTokenDataSource: localTokenDataSource
         )
 
         // MARK: - UseCases
@@ -44,10 +45,13 @@ extension AuthServiceDependency {
         let signupUseCase = SignupUseCase(
             authRepository: authRepository
         )
+        let logoutUserCase = LogoutUseCase(
+            repository: authRepository
+        )
 
         // MARK: - Plugin
         let jwtPlugin = JWTPlugin(
-            loaclTokenDataSource: loaclTokenDataSource
+            localTokenDataSource: localTokenDataSource
         )
 
         return AuthServiceDependency(
@@ -57,6 +61,7 @@ extension AuthServiceDependency {
             refreshTokenIfExpiredUseCase: refreshTokenIfExpiredUseCase,
             signinUseCase: signinUseCase,
             signupUseCase: signupUseCase,
+            logoutUseCase: logoutUserCase,
             jwtPlugin: jwtPlugin
         )
     }
