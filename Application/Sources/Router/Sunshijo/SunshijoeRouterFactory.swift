@@ -9,6 +9,9 @@ class SunshijoRouterFactory: RouterFactory {
     let launchScreenView: LaunchScreenView
     let signupView: SignupView
     let loginView: LoginView
+    let profileView: ProfileView
+    let editPasswordView: EditPasswordView
+    let errorReportView: ErrorReportView
 
     // main
     let mainView: MainView
@@ -30,10 +33,13 @@ class SunshijoRouterFactory: RouterFactory {
         )
         let evaluationViewModel = EvaluationViewModel()
         let scheduleViewModel = ScheduleViewModel()
-        let etcViewModel = EtcViewModel()
+        let etcViewModel = EtcViewModel(logoutUseCase: authServiceDependency.logoutUseCase)
         let launchScreenViewModel = LaunchScreenViewModel(
             refreshTokenUseCase: authServiceDependency.refreshTokenUseCase
         )
+        let profileViewModel = ProfileViewModel()
+        let editPasswordViewModel = EditPasswordViewModel()
+        let errorReportViewModel = ErrorReportViewModel()
 
         // View
         self.signupView = SignupView(viewModel: signupViewModel)
@@ -48,8 +54,12 @@ class SunshijoRouterFactory: RouterFactory {
             evaluationView: .init(viewModel: evaluationViewModel),
             etcView: .init(viewModel: etcViewModel))
         self.launchScreenView = LaunchScreenView(viewModel: launchScreenViewModel)
+        self.profileView = ProfileView(viewModel: profileViewModel)
+        self.editPasswordView = EditPasswordView(viewModel: editPasswordViewModel)
+        self.errorReportView = ErrorReportView(viewModel: errorReportViewModel)
     }
 
+    // swiftlint:disable cyclomatic_complexity
     @ViewBuilder func makeBody(for screen: SunshijoRoute) -> some View {
         switch screen {
         case .launch:
@@ -68,6 +78,13 @@ class SunshijoRouterFactory: RouterFactory {
             evaluationView
         case .etc:
             etcView
+        case .profile:
+            profileView
+        case .editPassword:
+            editPasswordView
+        case .errorReport:
+            errorReportView
         }
     }
+    // swiftlint:enable cyclomatic_complexity
 }
