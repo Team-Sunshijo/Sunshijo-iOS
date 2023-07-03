@@ -2,6 +2,7 @@ import SwiftUI
 import SNavigationAndTab
 import SunshijoDesign
 struct ScheduleView: View, SNavigationAndTabContent {
+    @State var date = Date()
     let viewModel: ScheduleViewModel
     var tabInformation: TabInformation {
         TabInformation(
@@ -12,33 +13,25 @@ struct ScheduleView: View, SNavigationAndTabContent {
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("학사일정")
-                .font(.system(size: 24, weight: .semibold))
-                .padding(.top, 45)
-                .padding(.leading, 41)
-            VStack {
-                HStack(spacing: 5) {
-                    Text("5월")
-                        .font(.system(size: 16, weight: .medium))
+                HStack {
+                    Text("학사일정")
+                        .sdText(type: .semiBold24, textColor: .GrayScale.gray900)
+                        .padding(.top, 5)
+                        .padding(.leading, 40)
+                    Spacer()
                 }
-            }
-            .padding(.leading, 41)
-            .padding(.top, 15)
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 35) {
-                    ForEach(viewModel.dayOfWeek, id: \.self) {
-                        Text($0)
-                            .font(.system(size: 16, weight: .regular))
-                    }
-                }
-                .padding(.leading, 41)
-                .padding(.top, 43)
-            }
-            
-            ScrollView {
-                
-            }
-        
+                SDCalendar(date: $date, specialDays: viewModel.specialDays)
+                    .padding(.top, 15)
+            Spacer()
+        }
+        .background(RoundedRectangle(cornerRadius: 30)
+            .fill(Color(.white))
+            .edgesIgnoringSafeArea([.top])
+            .shadow(radius: 8, x: 0, y: 5)
+        )
+        .frame(height: 400)
+        Spacer().frame(height: 35)
+        VStack {
         }
     }
 }
