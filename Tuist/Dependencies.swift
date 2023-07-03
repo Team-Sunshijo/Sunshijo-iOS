@@ -43,7 +43,7 @@ let depencies = Dependencies(
         // SunshijoDesign_iOS
         .remote(
             url: "https://github.com/Team-Sunshijo/SunshijoDesign_iOS.git",
-            requirement: .upToNextMajor(from: "1.0.4")
+            requirement: .upToNextMajor(from: "1.0.8")
         )
     ]),
     platforms: [.iOS]

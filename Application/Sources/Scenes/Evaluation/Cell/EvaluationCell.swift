@@ -5,6 +5,7 @@ struct EvaluationCell: View {
     var title: String
     var teacher: String
     var detailText: String
+    var dateText: String
     var body: some View {
         VStack(alignment: .leading) {
             Spacer().frame(height: 16)
@@ -22,6 +23,12 @@ struct EvaluationCell: View {
             Text(detailText)
                 .sdText(type: .regular12, textColor: .GrayScale.gray700)
                 .padding(.leading, 22)
+            HStack {
+                Spacer()
+                Text(dateText)
+                    .sdText(type: .regular10, textColor: .GrayScale.gray700)
+                    .padding(.trailing, 22)
+            }
             Spacer()
         }
         .frame(height: 100)
