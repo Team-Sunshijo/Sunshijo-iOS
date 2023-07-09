@@ -29,9 +29,15 @@ struct ScheduleView: View, SNavigationAndTabContent {
             .edgesIgnoringSafeArea([.top])
             .shadow(radius: 8, x: 0, y: 5)
         )
-        .frame(height: 400)
-        Spacer().frame(height: 35)
-        VStack {
+        .frame(height: 390)
+        VStack(alignment: .leading) {
+            ScrollView(showsIndicators: false) {
+                Spacer().frame(height: 40)
+                ForEach(viewModel.cell, id: \.self) {
+                    ScheduleCellView(dayText: $0.day, dayofWeekText: $0.dayOfWeek, scheduleName: $0.scheduleName)
+                }
+            }
         }
+        .padding(.leading, 33)
     }
 }
