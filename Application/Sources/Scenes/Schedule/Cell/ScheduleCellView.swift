@@ -25,6 +25,5 @@ struct ScheduleCellView: View {
             Spacer()
         }
         .padding(.bottom, 15)
-       
     }
 }
